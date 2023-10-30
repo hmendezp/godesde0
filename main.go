@@ -9,4 +9,7 @@ import (
 func main() {
 	fmt.Println("Hola Mundo Chingón!!")
 	variables.MostrarEnteros()
+	variables.MostrarRestoVars()
+	estado, textRet := variables.Convertir2Texto(1001)
+	fmt.Println(estado, textRet)
 }
