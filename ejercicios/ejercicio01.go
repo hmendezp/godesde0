@@ -1,16 +1,12 @@
 package ejercicios
 
-import (
-	"fmt"
-	"strconv"
-)
+import "strconv"
 
 func Excer01(param1 string) (int, string) {
 	var valorRet string
 	i, erroneo := strconv.Atoi(param1)
 	if erroneo != nil {
-		fmt.Println("Ha ocurrido un error durante la conversión de cadena a entero con ", param1)
-		panic(erroneo)
+		return 0, "Hubo un error en Atoi()!"
 	}
 	if i > 100 {
 		valorRet = "Es mayor a 100"
@@ -18,5 +14,4 @@ func Excer01(param1 string) (int, string) {
 		valorRet = "Es menor a 100"
 	}
 	return i, valorRet
-
 }
