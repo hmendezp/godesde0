@@ -5,6 +5,7 @@ import (
 	"runtime"
 
 	"github.com/hmendezp/godesde0/ejercicios"
+	"github.com/hmendezp/godesde0/files"
 	"github.com/hmendezp/godesde0/iteraciones"
 	"github.com/hmendezp/godesde0/teclado"
 	"github.com/hmendezp/godesde0/variables"
@@ -41,5 +42,10 @@ func main() {
 	iteraciones.Iterar()
 
 	// ejercicios.DespliegaTabla()
-	ejercicios.MostrarTablaDel(8)
+	// ejercicios.MostrarTablaDel(8)
+	numero := 8
+	fmt.Print(ejercicios.ArmaTablaTexto(numero))
+	// files.EscribeArchTabla(numero)
+	// files.AgregaTabla(numero)
+	files.LeoArchivo()
 }

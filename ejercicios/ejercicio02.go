@@ -44,3 +44,11 @@ func MostrarTablaDel(numero int) {
 		fmt.Printf("%d x %d = %d\n", numero, i, numero*i)
 	}
 }
+
+func ArmaTablaTexto(numero int) string {
+	texto := ""
+	for i := 1; i <= 10; i++ {
+		texto += fmt.Sprintf("%d x %d = %d\n", numero, i, numero*i)
+	}
+	return texto
+}
