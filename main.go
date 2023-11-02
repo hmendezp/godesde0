@@ -4,9 +4,11 @@ import (
 	"fmt"
 	"runtime"
 
+	"github.com/hmendezp/godesde0/arreglos_slices"
 	"github.com/hmendezp/godesde0/ejercicios"
-	"github.com/hmendezp/godesde0/files"
+	"github.com/hmendezp/godesde0/funciones"
 	"github.com/hmendezp/godesde0/iteraciones"
+	"github.com/hmendezp/godesde0/mapas"
 	"github.com/hmendezp/godesde0/teclado"
 	"github.com/hmendezp/godesde0/variables"
 )
@@ -47,5 +49,23 @@ func main() {
 	fmt.Print(ejercicios.ArmaTablaTexto(numero))
 	// files.EscribeArchTabla(numero)
 	// files.AgregaTabla(numero)
-	files.LeoArchivo()
+	// files.LeoArchivo()
+
+	funciones.Calculos()
+	// funciones.CallSimpleClosure()
+
+	/* MiFibon := funciones.Fibonacci()
+	for i := 1; i < 11; i++ {
+		fmt.Printf("Fibonnacci(%d)=%d\n", i, MiFibon())
+	}
+
+	MiFactor := funciones.Factorial()
+	for i := 0; i < 13; i++ {
+		fmt.Printf("%d!=%d\n", i, MiFactor())
+	} */
+	funciones.Exponencia(2)
+
+	// arreglos_slices.MostrarArreglos()
+	arreglos_slices.MostrarSlices()
+	mapas.MostrarMapas()
 }
