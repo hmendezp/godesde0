@@ -5,13 +5,24 @@ import (
 	"runtime"
 
 	"github.com/hmendezp/godesde0/arreglos_slices"
+	e "github.com/hmendezp/godesde0/ejer_interfaces"
 	"github.com/hmendezp/godesde0/ejercicios"
 	"github.com/hmendezp/godesde0/funciones"
 	"github.com/hmendezp/godesde0/iteraciones"
 	"github.com/hmendezp/godesde0/mapas"
+	"github.com/hmendezp/godesde0/modelos"
 	"github.com/hmendezp/godesde0/teclado"
+	"github.com/hmendezp/godesde0/users"
 	"github.com/hmendezp/godesde0/variables"
 )
+
+func conVida(vida bool) string {
+	if vida {
+		return "vivo"
+	} else {
+		return "muerto"
+	}
+}
 
 func main() {
 	fmt.Println("Hola Mundo Chingón!!")
@@ -68,4 +79,16 @@ func main() {
 	// arreglos_slices.MostrarArreglos()
 	arreglos_slices.MostrarSlices()
 	mapas.MostrarMapas()
+
+	users.AltaUsuario()
+
+	Pedro := new(modelos.Hombre)
+	Pedro.SetVida(true)
+	e.HumanosRespirando(Pedro)
+	fmt.Println("Este humano esta ", conVida(Pedro.EstaVivo()))
+
+	Maria := new(modelos.Mujer)
+	e.HumanosRespirando(Maria)
+	// Maria.SetVida(false)
+	fmt.Println("Este humano esta ", conVida(Maria.EstaVivo()))
 }
