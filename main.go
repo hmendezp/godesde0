@@ -5,9 +5,11 @@ import (
 	"runtime"
 
 	"github.com/hmendezp/godesde0/arreglos_slices"
+	d "github.com/hmendezp/godesde0/defer_panic"
 	e "github.com/hmendezp/godesde0/ejer_interfaces"
 	"github.com/hmendezp/godesde0/ejercicios"
 	"github.com/hmendezp/godesde0/funciones"
+	g "github.com/hmendezp/godesde0/goroutines"
 	"github.com/hmendezp/godesde0/iteraciones"
 	"github.com/hmendezp/godesde0/mapas"
 	"github.com/hmendezp/godesde0/modelos"
@@ -91,4 +93,14 @@ func main() {
 	e.HumanosRespirando(Maria)
 	// Maria.SetVida(false)
 	fmt.Println("Este humano esta ", conVida(Maria.EstaVivo()))
+
+	d.VemosDefer()
+	// d.EjemploPanic()
+
+	canal1 := make(chan bool)
+	go g.DeletreaNombre("Elmer Homero", canal1)
+	defer func() {
+		<-canal1
+	}()
+	fmt.Println("Estoy aquí")
 }
