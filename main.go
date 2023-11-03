@@ -12,6 +12,7 @@ import (
 	g "github.com/hmendezp/godesde0/goroutines"
 	"github.com/hmendezp/godesde0/iteraciones"
 	"github.com/hmendezp/godesde0/mapas"
+	m "github.com/hmendezp/godesde0/middleware"
 	"github.com/hmendezp/godesde0/modelos"
 	"github.com/hmendezp/godesde0/teclado"
 	"github.com/hmendezp/godesde0/users"
@@ -98,9 +99,11 @@ func main() {
 	// d.EjemploPanic()
 
 	canal1 := make(chan bool)
-	go g.DeletreaNombre("Elmer Homero", canal1)
+	go g.DeletreaNombre("Hola", canal1)
 	defer func() {
 		<-canal1
 	}()
 	fmt.Println("Estoy aquí")
+	// w.MiWebServer()
+	m.MiMiddleware()
 }
